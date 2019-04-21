@@ -6,3 +6,4 @@ pandas==0.24.1
 pickle==11.1
 requests==2.21.0
 template==0.4.2
+sklearn==0.20.3
