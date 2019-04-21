@@ -1,0 +1,61 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').bind('click', function() {
+
+var word = $('#word').val();
+           $.ajax({
+           url: "/m",
+           type: "POST",
+           data: {word: word},
+           dataType: 'jsonp',
+           success: function(response) {
+            alert(response);
+           $("#wordResult").html(response.data.weather[0].hourly[0].tempC);
+          },
+          error: function(xhr) {
+            //Do Something to handle error
+         }
+         });
+
+
+
+
+/*
+            $.getJSON('/api',
+                function(data) {
+              //do nothing
+              //var JSONObject = JSON.parse(data);
+ //$("#res").html(data.data.weather[0].hourly[0].tempC);// /bgproceess test
+$("#res1").html(data[0])
+$("#res2").html(data[1])
+$("#res3").html(data[2])
+$("#res4").html(data[3])
+$("#res5").html(data[4])
+
+ //$("#res").html("hi123");
+
+            });**/
+            return false;
+          });
+        });
+</script>
+
+
+//button
+<div class='container'>
+    <h3>Test</h3>
+        <form>
+          <input name="text" id='word'>
+            <a href=# id=test><button class='btn btn-default'>Test</button></a>
+        </form>
+
+     <div id='wordResult'></div>
+<p id="res1"></p> 
+
+<p id="res2"></p> 
+<p id="res3"></p> 
+<p id="res4"></p> 
+<p id="res5"></p> 
+ 
+</div>
