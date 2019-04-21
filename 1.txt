@@ -1,1 +1,0 @@
-Random forest is a predictive modeling algorithm. The random forest can be used for both classification and regression tasks. It is a combination of tree predictors where each tree depends on the values of a random vector sampled independently with the same distribution for all trees in the forest.
